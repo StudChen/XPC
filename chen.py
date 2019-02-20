@@ -1,1 +1,1 @@
-chen is a goodman 
+chen is a good man 
