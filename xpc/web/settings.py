@@ -78,10 +78,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'xpc_1901',
-        'HOST': 'www.chenzhuangzhuang.club',
-        'PORT': '3306',
-        'USER': 'Chenzz',
-        'PASSWORD': 'chen1999',
+        'HOST': 'jijf.top',
+        'PORT': 3306,
+        'USER': 'jijf',
+        'PASSWORD': 'fuxiao',
         'CHARSET': 'utf8mb4',
     }
 }

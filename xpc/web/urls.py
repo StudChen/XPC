@@ -15,16 +15,26 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from web.views import post, composer
+
+from web.views.composer import *
+from web.views.post import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', post.index),
-    url(r'^list/(?P<page>\d+)/$', post.index),
-    url(r'user/oneuser/userid-(?P<cid>\d+)$', composer.oneuser),
-    url(r'a(?P<pid>\d+)$', post.detail),
-    url(r'u(?P<cid>\d+)$', composer.homepage),
-    url(r'comments$', post.comments),
-    url(r'index.php', post.index_php),
-    url(r'article/filmplay/ts-viewed', post.ts_view),
+    url(r'^$', index),
+    url(r'^list/(?P<page>\d+)/$', index),
+    url(r'user/oneuser/userid-(?P<cid>\d+)$', oneuser),
+    url(r'a(?P<pid>\d+)$', detail),
+    url(r'u(?P<cid>\d+)$', homepage),
+    url(r'comments$', comments),
+    url(r'index.php', index_php),
+    url(r'article/filmplay/ts-viewed',ts_view),
+    url(r'^api/user-center/captcha/send$', send_signup_captcha),
+    url(r'^signup/$', signup),
+    url(r'^api/codes/phone$', phone_codes),
+    url(r'^api/user-center/user/register$', register),
+    url(r'^login', login),
+
+
+
 ]

@@ -6,8 +6,10 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from __future__ import unicode_literals
-
+from hashlib import md5
 from django.db import models
+
+from web import settings
 
 
 class Comment(models.Model):
@@ -38,6 +40,8 @@ class Composer(models.Model):
     follow_counts = models.IntegerField()
     location = models.CharField(max_length=32, blank=True, null=True)
     career = models.CharField(max_length=32, blank=True, null=True)
+    phone = models.CharField(max_length=11, blank=True, null=True)
+    password = models.CharField(max_length=11, blank=True, null=True)
 
     class Meta:
         managed = False
@@ -52,6 +56,11 @@ class Composer(models.Model):
             post.roles = cr.roles
             posts.append(post)
         return posts
+
+    @classmethod
+    def make_password(cls, password):
+        password = '%s-%s' % (password, settings.SECRET_KEY)
+        return md5(password.encode('utf-8')).hexdigest()
 
 
 class Copyright(models.Model):
@@ -110,3 +119,15 @@ class Post(models.Model):
             composer.roles = cr.roles
             composers.append(composer)
         return composers
+
+
+class Code(models.Model):
+    code_id = models.BigAutoField(primary_key=True)
+    phone = models.BigIntegerField()
+    code = models.BigIntegerField()
+    created_at = models.DateTimeField()
+    ip = models.CharField(max_length=32)
+
+    class Meta:
+        managed = False
+        db_table = 'codes'

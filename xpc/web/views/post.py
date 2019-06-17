@@ -85,7 +85,7 @@ def comments(request):
             "total": paginator.count,
             "page_size": paginator.num_pages,
             "next_page_url": next_page,
-            "list": [comment2dict(comment)for comment in comments]
+            "list": [comment2dict(comment) for comment in comments]
         }
     }
     return JsonResponse(data)
@@ -109,6 +109,7 @@ def index_php(request):
         "likeNum": 0,
         "ts": "/message/my/ts-notice"
     })
+
 
 def ts_view(request):
     return JsonResponse({'count': 0})
