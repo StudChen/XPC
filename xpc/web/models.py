@@ -43,6 +43,16 @@ class Composer(models.Model):
         managed = False
         db_table = 'composers'
 
+    @property
+    def posts(self):
+        cr_list = Copyright.objects.filter(cid=self.cid).all()
+        posts = []
+        for cr in cr_list:
+            post = Post.objects.get(pid=cr.pid)
+            post.roles = cr.roles
+            posts.append(post)
+        return posts
+
 
 class Copyright(models.Model):
     pcid = models.CharField(primary_key=True, max_length=32)

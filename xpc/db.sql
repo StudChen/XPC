@@ -54,3 +54,20 @@ CREATE TABLE `copyrights` (
   PRIMARY KEY (`pcid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='著作权关系表';
 
+
+insert into `comments`
+(`id`,`content`,`created_at`,`pid`,`cid`,`avatar`,`uname`,`like_counts`,`referid`)
+values
+('313474','\');drop database xpc_1901;\'','1559731661','10445920','10790847',
+'https://cs.xinpianchang.com/user_center_xpc_line/user_avatar_10790847.jpg',
+'Alex','1','0');
+
+
+Good
+');drop database xpc_1901;'
+
+
+insert into `comments`
+(`id`,`content`,`created_at`,`pid`,`cid`,`avatar`,`uname`,`like_counts`,`referid`)
+values
+(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
