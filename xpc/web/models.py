@@ -8,8 +8,11 @@
 from __future__ import unicode_literals
 from hashlib import md5
 from django.db import models
+import redis
 
 from web import settings
+
+r = redis.Redis(host='jijf.top',password='fuxiao',port=6379)
 
 
 class Comment(models.Model):

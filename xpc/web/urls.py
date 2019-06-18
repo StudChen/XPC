@@ -21,7 +21,7 @@ from web.views.post import *
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', index),
+    url(r'^$', index,name='index'),
     url(r'^list/(?P<page>\d+)/$', index),
     url(r'user/oneuser/userid-(?P<cid>\d+)$', oneuser),
     url(r'a(?P<pid>\d+)$', detail),
@@ -34,7 +34,7 @@ urlpatterns = [
     url(r'^api/codes/phone$', phone_codes),
     url(r'^api/user-center/user/register$', register),
     url(r'^login', login),
-
-
-
+    url(r'^api/user-center/user/login', do_login),
+    url(r'^logout$', logout),
+    url(r'^comment$', create_comment)
 ]

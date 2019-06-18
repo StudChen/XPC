@@ -1,7 +1,9 @@
+from datetime import datetime
+
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.core.paginator import Paginator
-from web.models import Post, Comment
+from web.models import Post, Comment, r
 
 
 def index(request, page=1):
@@ -70,7 +72,7 @@ def comment2dict(comment):
 def comments(request):
     pid = request.GET.get('resource_id')
     page = request.GET.get('page')
-    comments = Comment.objects.filter(pid=pid)
+    comments = Comment.objects.filter(pid=pid).order_by('-created_at')
     paginator = Paginator(comments, 10)
     comments = paginator.page(int(page))
     next_page = None
@@ -113,3 +115,28 @@ def index_php(request):
 
 def ts_view(request):
     return JsonResponse({'count': 0})
+
+
+def create_comment(request):
+    pid = request.POST.get('resource_id')
+    content = request.POST.get('content')
+    referid = request.POST.get('comment_id', 0)
+    comment = Comment()
+    comment.id = r.incr('comment_max_id')
+    comment.pid = pid
+    comment.content = content
+    comment.cid = request.composer.cid
+    comment.avatar = request.composer.avatar
+    comment.uname = request.composer.name
+    comment.created_at = datetime.now()
+    comment.like_counts = 0
+    comment.referid = referid
+    comment.save()
+    return JsonResponse({
+        "status": 0,
+        "code": "_200",
+        "message": "OK",
+        "data": comment2dict(comment)
+    })
+
+

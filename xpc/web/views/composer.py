@@ -1,16 +1,16 @@
-import json
 import random
 import string
+import json
+from hashlib import md5
 from datetime import datetime
-from django.shortcuts import render
-
-from django.http import JsonResponse
-
-from web.models import Code, Composer
+from django.http import JsonResponse, HttpResponse,HttpResponseRedirect
+from django.shortcuts import render, redirect,reverse
+from django.conf import settings
+from web.models import Composer, Code
 
 
 def oneuser(request, cid):
-    composer = Composer.objects.get(cid=cid)
+    composer = Composer.objects.filter(cid=cid).all()
     composer.two_posts = composer.posts[0:2]
     return render(request, 'oneuser.html', {'composer': composer})
 
@@ -22,19 +22,21 @@ def homepage(request, cid):
 
 
 def signup(request):
+    """显示注册页面"""
     return render(request, 'signup.html')
 
 
 def send_signup_captcha(request):
-    '''发送注册验证码'''
+    """发送注册验证码"""
     body = request.body.decode('utf-8')
     data = json.loads(body)
     code = Code()
-    Code.phone = data['phone']
+    code.phone = data['phone']
     code.code = ''.join(random.choices(string.digits, k=6))
     code.created_at = datetime.now()
     code.ip = request.META['REMOTE_ADDR']
     code.save()
+    print('send code %s to %s' % (code.code, code.phone))
     return JsonResponse({
         "code": "SUCCESS",
         "success": True,
@@ -42,7 +44,9 @@ def send_signup_captcha(request):
 
 
 def register(request):
-    '''注册'''
+    """注册逻辑"""
+    # {"phone": "13601058935", "password": "123456", "smsCaptcha": "415781", "nickname": "小申", "regionCode": "+86",
+    #  "quickMode": False}
     body = request.body.decode('utf-8')
     data = json.loads(body)
     code = Code.objects.filter(phone=data['phone'], code=data['smsCaptcha']).first()
@@ -76,6 +80,7 @@ def login(request):
 def do_login(request):
     body = request.body.decode('utf-8')
     data = json.loads(body)
+
     composer = Composer.objects.filter(phone=data['phone']).first()
     if not composer or composer.password != Composer.make_password(data['password']):
         return JsonResponse({
@@ -83,13 +88,21 @@ def do_login(request):
             "message": "手机号或者密码错误",
             "success": False,
             "date": "20190617-10:48:03"})
-    response = JsonResponse(JsonResponse({
-        "code":"SUCCESS",
-        "success":True,
-        "message":"成功",
+
+    response = JsonResponse({
+        "code": "SUCCESS",
+        "success": True,
+        "message": "成功",
         "redirect_uri": "/",
-    }))
-    response.set_cookie('Authorization',composer.cid)
+    })
+    # response = HttpResponse('test')
+    response.set_cookie('cid', composer.cid)
+    return response
+
+
+def logout(request):
+    response = HttpResponseRedirect('/')
+    response.delete_cookie('cid')
     return response
 
 

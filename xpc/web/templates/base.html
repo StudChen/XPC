@@ -20,94 +20,135 @@
     <link rel="apple-touch-icon" sizes="120x120" href="/touch-icon-iphone-retina.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/touch-icon-ipad-retina.png">
     <style>
-			.line-hide-1{overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;}
-	.hothover:hover{
-	color: #999!important;
-}
+        .line-hide-1 {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+
+        .hothover:hover {
+            color: #999 !important;
+        }
 
     </style>
     <link rel="stylesheet" href="https://www.xinpianchang.com/public/css/new-web/font-icon.css?v=1553603264">
     <link rel="stylesheet" href="https://www.xinpianchang.com/public/css/new-web/common.css?v=1554275799">
     <style>
-	.fw_600{font-weight: 500;}
+        .fw_600 {
+            font-weight: 500;
+        }
 
     </style>
     <!-- <script src="https://www.xinpianchang.com/public/js/wb.js" type="text/javascript" charset="utf-8"></script> -->
     <script>
-if (top.location != location) {
-	top.location.href = location.href;
-}
-var passport_origin = "https://passport.xinpianchang.com";
-if (window.addEventListener) {
-	window.addEventListener('message', function(e) {
-		if (!e.origin || e.origin === passport_origin) {
-			if (e.data.act === 'reload') {
-				location.reload();
-			}else if (e.data.act === 'bind_phone') {
-				location.href= passport_origin + '/bind_phone?callback=' + location.href;
-			}
-		}
-	}, false);
-}
+        if (top.location != location) {
+            top.location.href = location.href;
+        }
+        var passport_origin = "https://passport.xinpianchang.com";
+        if (window.addEventListener) {
+            window.addEventListener('message', function (e) {
+                if (!e.origin || e.origin === passport_origin) {
+                    if (e.data.act === 'reload') {
+                        location.reload();
+                    } else if (e.data.act === 'bind_phone') {
+                        location.href = passport_origin + '/bind_phone?callback=' + location.href;
+                    }
+                }
+            }, false);
+        }
 
 
     </script>
     <script>
-	var userid = 10345093;
-	var username = 'shxiaomifeng';
-	// 0 未知  1 男  2 女
-	var sex = '0';
-	// 出生日期
-	var year = '';
-	// 管理员类型
-	var isadmin = '0';
-	// 职业
-	var profession = '';
-	// 省份
-	var province = '';
-	// 入行年份
-	var entry_year = '0';
+        var userid = 10345093;
+        var username = 'shxiaomifeng';
+        // 0 未知  1 男  2 女
+        var sex = '0';
+        // 出生日期
+        var year = '';
+        // 管理员类型
+        var isadmin = '0';
+        // 职业
+        var profession = '';
+        // 省份
+        var province = '';
+        // 入行年份
+        var entry_year = '0';
 
     </script>
     <script>
-(function(para) {
-  var p = para.sdk_url, n = para.name, w = window, d = document, s = 'script',x = null,y = null;
-  w['sensorsDataAnalytic201505'] = n;
-  w[n] = w[n] || function(a) {return function() {(w[n]._q = w[n]._q || []).push([a, arguments]);}};
-  var ifs = ['track','quick','register','registerPage','registerOnce','clearAllRegister','trackSignup', 'trackAbtest', 'setProfile','setOnceProfile','appendProfile', 'incrementProfile', 'deleteProfile', 'unsetProfile', 'identify','login','logout','trackLink','clearAllRegister','getAppStatus'];
-  for (var i = 0; i < ifs.length; i++) {
-    w[n][ifs[i]] = w[n].call(null, ifs[i]);
-  }
-  if (!w[n]._t) {
-    x = d.createElement(s), y = d.getElementsByTagName(s)[0];
-    x.async = 1;
-    x.src = p;
-    x.setAttribute('charset','UTF-8');
-    y.parentNode.insertBefore(x, y);
-    w[n].para = para;
-  }
-})({
-  sdk_url: 'https://oss-xpc0.xpccdn.com/static/sensorsdata-1.8.14.min.js',
-  name: 'sa',
-  server_url: 'https://sa.xpccdn.com/sa?project=production',
-  show_log: false
-});
-sa.quick('autoTrack');
+        (function (para) {
+            var p = para.sdk_url, n = para.name, w = window, d = document, s = 'script', x = null, y = null;
+            w['sensorsDataAnalytic201505'] = n;
+            w[n] = w[n] || function (a) {
+                return function () {
+                    (w[n]._q = w[n]._q || []).push([a, arguments]);
+                }
+            };
+            var ifs = ['track', 'quick', 'register', 'registerPage', 'registerOnce', 'clearAllRegister', 'trackSignup', 'trackAbtest', 'setProfile', 'setOnceProfile', 'appendProfile', 'incrementProfile', 'deleteProfile', 'unsetProfile', 'identify', 'login', 'logout', 'trackLink', 'clearAllRegister', 'getAppStatus'];
+            for (var i = 0; i < ifs.length; i++) {
+                w[n][ifs[i]] = w[n].call(null, ifs[i]);
+            }
+            if (!w[n]._t) {
+                x = d.createElement(s), y = d.getElementsByTagName(s)[0];
+                x.async = 1;
+                x.src = p;
+                x.setAttribute('charset', 'UTF-8');
+                y.parentNode.insertBefore(x, y);
+                w[n].para = para;
+            }
+        })({
+            sdk_url: 'https://oss-xpc0.xpccdn.com/static/sensorsdata-1.8.14.min.js',
+            name: 'sa',
+            server_url: 'https://sa.xpccdn.com/sa?project=production',
+            show_log: false
+        });
+        sa.quick('autoTrack');
 
     </script>
     <!-- start Dplus -->
     <script type="text/javascript">
-        !function(a,b){if(!b.__SV){var c,d,e,f;window.dplus=b,b._i=[],b.init=function(a,c,d){function g(a,b){var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]),a[b]=function(){a.push([b].concat(Array.prototype.slice.call(arguments,0)))}}var h=b;for("undefined"!=typeof d?h=b[d]=[]:d="dplus",h.people=h.people||[],h.toString=function(a){var b="dplus";return"dplus"!==d&&(b+="."+d),a||(b+=" (stub)"),b},h.people.toString=function(){return h.toString(1)+".people (stub)"},e="disable track track_links track_forms register unregister get_property identify clear set_config get_config get_distinct_id track_pageview register_once track_with_tag time_event people.set people.unset people.delete_user".split(" "),f=0;f<e.length;f++)g(h,e[f]);b._i.push([a,c,d])},b.__SV=1.1,c=a.createElement("script"),c.type="text/javascript",c.charset="utf-8",c.async=!0,c.src="//w.cnzz.com/dplus.php?id=1262268826",d=a.getElementsByTagName("script")[0],d.parentNode.insertBefore(c,d)}}(document,window.dplus||[]),dplus.init("1262268826");
+        !function (a, b) {
+            if (!b.__SV) {
+                var c, d, e, f;
+                window.dplus = b, b._i = [], b.init = function (a, c, d) {
+                    function g(a, b) {
+                        var c = b.split(".");
+                        2 == c.length && (a = a[c[0]], b = c[1]), a[b] = function () {
+                            a.push([b].concat(Array.prototype.slice.call(arguments, 0)))
+                        }
+                    }
+
+                    var h = b;
+                    for ("undefined" != typeof d ? h = b[d] = [] : d = "dplus", h.people = h.people || [], h.toString = function (a) {
+                        var b = "dplus";
+                        return "dplus" !== d && (b += "." + d), a || (b += " (stub)"), b
+                    }, h.people.toString = function () {
+                        return h.toString(1) + ".people (stub)"
+                    }, e = "disable track track_links track_forms register unregister get_property identify clear set_config get_config get_distinct_id track_pageview register_once track_with_tag time_event people.set people.unset people.delete_user".split(" "), f = 0; f < e.length; f++) g(h, e[f]);
+                    b._i.push([a, c, d])
+                }, b.__SV = 1.1, c = a.createElement("script"), c.type = "text/javascript", c.charset = "utf-8", c.async = !0, c.src = "//w.cnzz.com/dplus.php?id=1262268826", d = a.getElementsByTagName("script")[0], d.parentNode.insertBefore(c, d)
+            }
+        }(document, window.dplus || []), dplus.init("1262268826");
     </script><!-- end Dplus -->
 
     <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-  ga('create', 'UA-76608034-3', 'auto');
-  ga('send', 'pageview');
+        ga('create', 'UA-76608034-3', 'auto');
+        ga('send', 'pageview');
 
 
     </script>
@@ -354,6 +395,7 @@ sa.quick('autoTrack');
                 </a>
             </li>
         </ul>
+    {% if request.composer %}
         <ul class="fr right-part ">
             <li class="search-btn icon-search"></li>
             <!-- <li class="ring-btn hover-elem">
@@ -375,7 +417,7 @@ sa.quick('autoTrack');
                 <span class="new-msginfo show-msg dn"></span>
                 <a href="/u10345093">
                     <div class="user-face-con">
-                        <img src="https://oss-xpc0.xpccdn.com/passport/default.png@60w_60h_1e_1c">
+                        <img src="{{request.composer.avatar}}">
                     </div>
                 </a>
                 <div class="common-hover-wrap user-hover-wrap">
@@ -398,7 +440,7 @@ sa.quick('autoTrack');
                                 <a href="/user/userverify/ts-intro">认证</a>
                             </li>
                             <li><a href="https://passport.xinpianchang.com/settings" target="_blank">账号设置</a></li>
-                            <li><a href="/user/login/ts-out">退出登录</a></li>
+                            <li><a href="/logout">退出登录</a></li>
                         </ul>
 
                     </div>
@@ -406,27 +448,128 @@ sa.quick('autoTrack');
             </li>
             <li class="upload-btn"><a href="/upload/index/ts-upload_index?from=tab">上传作品</a></li>
         </ul>
+    {% else %}
+       <ul class="fr right-part no-login">
+			<li class="search-btn icon-search"></li>
+						<li class="reg-btn"><a href="login">登录</a></li>
+			<li class="login-btn"><a href="signup">注册</a></li>
+					</ul>
+    {% endif %}
     </div>
 </div>
 <style>
-    .common-notice-cover{position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 100;background: rgba(0,0,0,0.5);}
-    .common-notice-cover span{display: inline-block;}
-    .common-notice-cover{opacity: 0;transition:all 0.5s;-webkit-transition:all 0.5s;-moz-transition:all 0.5s;-ms-transition:all 0.5s;z-index: 10003;}
+    .common-notice-cover {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        background: rgba(0, 0, 0, 0.5);
+    }
 
-    .common-notice-cover-ground{width: 380px; background: #fff; position: absolute; left: 50%; top: 50%; margin: -100px 0 0 -190px; border-radius: 2px;}
-    .common-notice-cover-ground .tip-wrap{position: relative; padding: 11px 20px 12px; border-bottom: 4px solid #f7f7f7;}
-    .common-notice-cover-ground .tip-wrap .tip-title{font-size: 14px; font-weight: 600px; color: #333;}
-    .common-notice-cover-ground .tip-wrap .notice-close{position: absolute; right: 20px; top: 50%; transform: translateY(-50%); cursor: pointer;}
-    .common-notice-cover-ground .tip-wrap .notice-close:before{font-size: 18px; color: #000;}
-    .common-notice-cover-ground .tip-wrap .notice-close i:hover:before{color: #666;}
-    .common-notice-cover-ground .tip-contaniner{padding: 20px 40px; text-align: center;}
-    .common-notice-cover-ground .tip-content{font-size: 14px; font-weight: 300; color: #333;}
-    .common-notice-cover-ground .close-know{width: 100px;height: 60px;border-radius: 2px;background-color: #e74b3b;color: #fff;line-height: 60px;font-size: 14px;margin-top: 40px;display: inline-block;}
+    .common-notice-cover span {
+        display: inline-block;
+    }
 
-    .common-notice-cover-ground .tip-btn{margin-top: 30px; font-size: 0;}
-    .common-notice-cover-ground .tip-btn span{display: inline-block; width: 98px; height: 34px; font-size: 14px; font-weight: 500; line-height: 34px; border-radius: 2px; color: #fff; cursor: pointer;}
-    .common-notice-cover-ground .tip-btn .close-sure{background-color: #fff; border: solid 0.5px rgba(153,153,153,.5); color: #333; margin-right: 20px;}
-    .opacity-1{opacity: 1!important;}
+    .common-notice-cover {
+        opacity: 0;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        z-index: 10003;
+    }
+
+    .common-notice-cover-ground {
+        width: 380px;
+        background: #fff;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -100px 0 0 -190px;
+        border-radius: 2px;
+    }
+
+    .common-notice-cover-ground .tip-wrap {
+        position: relative;
+        padding: 11px 20px 12px;
+        border-bottom: 4px solid #f7f7f7;
+    }
+
+    .common-notice-cover-ground .tip-wrap .tip-title {
+        font-size: 14px;
+        font-weight: 600px;
+        color: #333;
+    }
+
+    .common-notice-cover-ground .tip-wrap .notice-close {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+
+    .common-notice-cover-ground .tip-wrap .notice-close:before {
+        font-size: 18px;
+        color: #000;
+    }
+
+    .common-notice-cover-ground .tip-wrap .notice-close i:hover:before {
+        color: #666;
+    }
+
+    .common-notice-cover-ground .tip-contaniner {
+        padding: 20px 40px;
+        text-align: center;
+    }
+
+    .common-notice-cover-ground .tip-content {
+        font-size: 14px;
+        font-weight: 300;
+        color: #333;
+    }
+
+    .common-notice-cover-ground .close-know {
+        width: 100px;
+        height: 60px;
+        border-radius: 2px;
+        background-color: #e74b3b;
+        color: #fff;
+        line-height: 60px;
+        font-size: 14px;
+        margin-top: 40px;
+        display: inline-block;
+    }
+
+    .common-notice-cover-ground .tip-btn {
+        margin-top: 30px;
+        font-size: 0;
+    }
+
+    .common-notice-cover-ground .tip-btn span {
+        display: inline-block;
+        width: 98px;
+        height: 34px;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 34px;
+        border-radius: 2px;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .common-notice-cover-ground .tip-btn .close-sure {
+        background-color: #fff;
+        border: solid 0.5px rgba(153, 153, 153, .5);
+        color: #333;
+        margin-right: 20px;
+    }
+
+    .opacity-1 {
+        opacity: 1 !important;
+    }
 
 
 </style>
@@ -458,12 +601,13 @@ sa.quick('autoTrack');
         _tipTitle = $(".tip-title"),
         _tipCancel = $(".close-cancel"),
         _tipSure = $(".close-sure");
+
     // var noCloseBtn = document.getElementsByClassName('no_close')[0];
-    function showSureDialogTip(obj,callback){
+    function showSureDialogTip(obj, callback) {
         _commonNoticeCover.removeClass("dn");
-        setTimeout(function(){
+        setTimeout(function () {
             _commonNoticeCover.addClass("opacity-1");
-        },0)
+        }, 0)
 
         if (obj.title) {
             _tipTitle.text(obj.title);
@@ -484,22 +628,24 @@ sa.quick('autoTrack');
             _tipSure.text(obj.sure);
         }
 
-        dialogTipCallback = callback || function(){};
+        dialogTipCallback = callback || function () {
+        };
         _body.addClass("ovh");
     }
-    $(".tip-btn span, .notice-close").on("click",function(){
+
+    $(".tip-btn span, .notice-close").on("click", function () {
         // 需要进行其他条件判断的不在这里做关闭处理
-        if($(this).hasClass("close-sure")){
+        if ($(this).hasClass("close-sure")) {
             dialogTipCallback();
         }
-        if($(this).hasClass('no_close')){
+        if ($(this).hasClass('no_close')) {
             $(this).removeClass('no_close');
             return;
         }
         _commonNoticeCover.removeClass("opacity-1");
-        setTimeout(function(){
+        setTimeout(function () {
             _commonNoticeCover.addClass("dn");
-        },300)
+        }, 300)
         _body.removeClass("ovh");
     })
 
@@ -510,11 +656,51 @@ sa.quick('autoTrack');
     .dialog-tip .tip-content{padding-left: 18px;background: url(../img/error-notice@3x.png) no-repeat;background-position: left;background-size: 14px;}
     .dialog-tip-show{opacity: 1;transform:translateY(0px);}*/
 
-    .dialog-tip{position: fixed;color: #fff;z-index: -1;opacity: 0;transition:all 1s;-webkit-transition:all 1s;-moz-transition:all 1s;-ms-transition:all 1s;width: 100%;text-align: center;background-color: #e74b3b;height: 50px;line-height: 50px;transform:translateY(-50px);-webkit-transform:translateY(-50px);-moz-transform:translateY(-50px);-ms-transform:translateY(-50px);top:0; z-index: 100000;}
-    .dialog-tip .tip-content{padding-left: 20px;background: url(https://www.xinpianchang.com/public/images/error-notice@3x.png) no-repeat;background-position: left;background-size: 14px;display: inline-block;}
-    .tip-success{background-color: #28ca42;}
-    .tip-success .tip-content{background-image: url(https://www.xinpianchang.com/public/images/success-notice@3x.png)}
-    .dialog-tip-show{opacity: 1;transform:translateY(0px);-webkit-transform:translateY(0px);-moz-transform:translateY(0px);-ms-transform:translateY(0px);}
+    .dialog-tip {
+        position: fixed;
+        color: #fff;
+        z-index: -1;
+        opacity: 0;
+        transition: all 1s;
+        -webkit-transition: all 1s;
+        -moz-transition: all 1s;
+        -ms-transition: all 1s;
+        width: 100%;
+        text-align: center;
+        background-color: #e74b3b;
+        height: 50px;
+        line-height: 50px;
+        transform: translateY(-50px);
+        -webkit-transform: translateY(-50px);
+        -moz-transform: translateY(-50px);
+        -ms-transform: translateY(-50px);
+        top: 0;
+        z-index: 100000;
+    }
+
+    .dialog-tip .tip-content {
+        padding-left: 20px;
+        background: url(https://www.xinpianchang.com/public/images/error-notice@3x.png) no-repeat;
+        background-position: left;
+        background-size: 14px;
+        display: inline-block;
+    }
+
+    .tip-success {
+        background-color: #28ca42;
+    }
+
+    .tip-success .tip-content {
+        background-image: url(https://www.xinpianchang.com/public/images/success-notice@3x.png)
+    }
+
+    .dialog-tip-show {
+        opacity: 1;
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+    }
 
 </style>
 <div class="dialog-tip">
@@ -542,21 +728,22 @@ sa.quick('autoTrack');
         // dialogTipCallback = callback || function(){};
 
     }*/
-    function getUa(){
+    function getUa() {
         var ua = navigator.userAgent.toLowerCase();
         return {
-            isAndroid : /android/i.test(ua),
-            isIOS : /iphone|ipad|ipod/i.test(ua),
-            isQq : /qq/i.test(ua),
-            isWeibo : /weibo/i.test(ua),
-            isWeixin : /MicroMessenger/i.test(ua),
+            isAndroid: /android/i.test(ua),
+            isIOS: /iphone|ipad|ipod/i.test(ua),
+            isQq: /qq/i.test(ua),
+            isWeibo: /weibo/i.test(ua),
+            isWeixin: /MicroMessenger/i.test(ua),
             isVmovierApp: /VmovierApp/i.test(ua),
             isXpcApp: /NewStudios/i.test(ua),
         }
     }
 
     var ua = getUa();
-    var noop = noop || function() {};
+    var noop = noop || function () {
+    };
     var templete = $(".dialog-tip");
     if (ua.isAndroid || ua.isIOS) {
         templete.find(".tip-content").empty();
@@ -571,15 +758,15 @@ sa.quick('autoTrack');
         var tip = templete.clone().appendTo(document.body);
         tip.find(".tip-content").text(content);
 
-        setTimeout(function() {
+        setTimeout(function () {
             // appendTo body 之后，需要一点时间（20ms,至少经过一个animate looper）来使得css生效
             // 然后再增加dialog-top-show，就能有css动画了
 
-            tip.addClass("dialog-tip-show tip-" + (obj.error ? "" : "success")).css("z-index",10003);
-            setTimeout(function() {
+            tip.addClass("dialog-tip-show tip-" + (obj.error ? "" : "success")).css("z-index", 10003);
+            setTimeout(function () {
                 // timeout 后开始消失css动画
                 tip.removeClass("dialog-tip-show");
-                setTimeout(function() {
+                setTimeout(function () {
                     // 500ms css小时动画结束后，移出append的tip
                     tip.remove();
                 }, 500);
@@ -607,185 +794,187 @@ sa.quick('autoTrack');
 <script type="text/javascript" src="https://www.xinpianchang.com/public/js/new-web/common.js?v=1553603264"></script>
 <script type="text/javascript" src="https://www.xinpianchang.com/public/js/xpcstat.js?v=1540194470"></script>
 <script type="text/javascript">
-	// 神策统计
-	var pageFrom = getRequest().from ? getRequest().from : 'other',
-		stat = new Stat(sa, {
-			userid: userid,
-			sex: sex,
-			year: year,
-			province : province,
-			isadmin: isadmin
+    // 神策统计
+    var pageFrom = getRequest().from ? getRequest().from : 'other',
+        stat = new Stat(sa, {
+            userid: userid,
+            sex: sex,
+            year: year,
+            province: province,
+            isadmin: isadmin
 
-		});
-	stat.registerPage({
-		userid: userid,
-		isadmin: isadmin
-	});
+        });
+    stat.registerPage({
+        userid: userid,
+        isadmin: isadmin
+    });
 
 </script>
 <script type="text/javascript">
 
 
-	// if (!localStorage.getItem("tagnew") || localStorage.getItem("tagnew") == 0) {
- //        $(".removeSquare").removeClass('dn');
- //    } else {
- //        $(".removeSquare").addClass('dn');
- //    }
-	// $(".resource-video").hover(function(){
-	// 	localStorage.setItem("tagnew", 1);
-	// 	$(".removeSquare").addClass('dn');
-	// })
+    // if (!localStorage.getItem("tagnew") || localStorage.getItem("tagnew") == 0) {
+    //        $(".removeSquare").removeClass('dn');
+    //    } else {
+    //        $(".removeSquare").addClass('dn');
+    //    }
+    // $(".resource-video").hover(function(){
+    // 	localStorage.setItem("tagnew", 1);
+    // 	$(".removeSquare").addClass('dn');
+    // })
 
-	// if (!localStorage.getItem("tagNew") || localStorage.getItem("tagNew") == 0) {
- //        $(".removeSquareTwo").removeClass('dn');
- //    } else {
- //        $(".removeSquareTwo").addClass('dn');
- //    }
-	// $(".service-on").hover(function(){
-	// 	localStorage.setItem("tagNew", 1);
-	// 	$(".removeSquareTwo").addClass('dn');
-	// })
+    // if (!localStorage.getItem("tagNew") || localStorage.getItem("tagNew") == 0) {
+    //        $(".removeSquareTwo").removeClass('dn');
+    //    } else {
+    //        $(".removeSquareTwo").addClass('dn');
+    //    }
+    // $(".service-on").hover(function(){
+    // 	localStorage.setItem("tagNew", 1);
+    // 	$(".removeSquareTwo").addClass('dn');
+    // })
 
 
-	var siteUrl = 'https://www.xinpianchang.com/',
-		hoverElem = $(".hover-elem"),
-		loginUserid = userid;
-	$(function(){
+    var siteUrl = 'https://www.xinpianchang.com/',
+        hoverElem = $(".hover-elem"),
+        loginUserid = userid;
+    $(function () {
 
-		function setCookie(name,value){
-			var Days = 30;
-			var exp = new Date();
-			exp.setTime(exp.getTime() + Days*24*60*60*1000);
-			document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
-		}
+        function setCookie(name, value) {
+            var Days = 30;
+            var exp = new Date();
+            exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+            document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+        }
 
-		function getCookie(name){
-			var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
-			if(arr=document.cookie.match(reg))
-			return unescape(arr[2]);
-			else
-			return null;
-		}
-		var searchWrap = $(".search-wrap"),
-			searchLeft = $(".search-left"),
-			searchBtn = $(".search-btn"),
-			searchClose = $(".search-close-btn"),
-			searchInput = $(".search-input");
-		searchBtn.on("click", function() {
-			searchWrap.removeClass("dn opacity0");
-			setTimeout(function() {
-				searchLeft.find("input").focus();
-				searchLeft.addClass("slideLeft")
-				searchClose.addClass("show");
-				searchInput.focus();
-			}, 30);
-		});
+        function getCookie(name) {
+            var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+            if (arr = document.cookie.match(reg))
+                return unescape(arr[2]);
+            else
+                return null;
+        }
 
-		searchClose.on("click", searchInit);
+        var searchWrap = $(".search-wrap"),
+            searchLeft = $(".search-left"),
+            searchBtn = $(".search-btn"),
+            searchClose = $(".search-close-btn"),
+            searchInput = $(".search-input");
+        searchBtn.on("click", function () {
+            searchWrap.removeClass("dn opacity0");
+            setTimeout(function () {
+                searchLeft.find("input").focus();
+                searchLeft.addClass("slideLeft")
+                searchClose.addClass("show");
+                searchInput.focus();
+            }, 30);
+        });
 
-		searchWrap.on("click", function(e) {
-			if (e.target.className.indexOf("search-wrap") != -1) {
-				searchInit();
-			}
-		});
+        searchClose.on("click", searchInit);
 
-		function searchInit() {
-			searchWrap.addClass("opacity0");
-			setTimeout(function() {
-				searchWrap.addClass("dn");
-			}, 150);
-			searchLeft.removeClass("slideLeft")
-			searchClose.removeClass("show");
-		}
+        searchWrap.on("click", function (e) {
+            if (e.target.className.indexOf("search-wrap") != -1) {
+                searchInit();
+            }
+        });
 
-		hoverElem.hover(function(e) {
-			var _this = $(this),
-			hoverWrap = _this.find(".common-hover-wrap");
-			hoverWrap.addClass('visible')
+        function searchInit() {
+            searchWrap.addClass("opacity0");
+            setTimeout(function () {
+                searchWrap.addClass("dn");
+            }, 150);
+            searchLeft.removeClass("slideLeft")
+            searchClose.removeClass("show");
+        }
 
-		}, function(e) {
-			var _this = $(this),
-			hoverWrap = _this.find(".common-hover-wrap");
-			hoverWrap.removeClass('visible')
-		});
+        hoverElem.hover(function (e) {
+            var _this = $(this),
+                hoverWrap = _this.find(".common-hover-wrap");
+            hoverWrap.addClass('visible')
 
-	})
-	// 去掉点击后提交反馈的弹框，点击后直接跳转至新片场使用帮助
-	// $(".to-feedback").click(function(){
+        }, function (e) {
+            var _this = $(this),
+                hoverWrap = _this.find(".common-hover-wrap");
+            hoverWrap.removeClass('visible')
+        });
 
-	// 	if (!loginUserid) {
-	// 		$(".feedback-wrap").addClass("dn");
-	// 		loginIframe.show();
-	// 		return;
-	// 	}
-	// 	banPageScroll();
-	// 	$(".feedback-wrap").removeClass("dn");
-	// })
+    })
+    // 去掉点击后提交反馈的弹框，点击后直接跳转至新片场使用帮助
+    // $(".to-feedback").click(function(){
 
-	$(".feedback-btn").on('click',function(){
-		var _this = $(this)[0];
-		var content = $.trim($(".feedback-input-wrap textarea").val());
-		if (!_this.flag) {
-			_this.flag = true;
-			$.post('/index.php?app=aboutus&ac=feedback',{content: content}, function(res) {
+    // 	if (!loginUserid) {
+    // 		$(".feedback-wrap").addClass("dn");
+    // 		loginIframe.show();
+    // 		return;
+    // 	}
+    // 	banPageScroll();
+    // 	$(".feedback-wrap").removeClass("dn");
+    // })
 
-				if (res.status == -1) {
-					$(".feedback-wrap").addClass("dn");
-					loginIframe.show();
-					return;
-				}
+    $(".feedback-btn").on('click', function () {
+        var _this = $(this)[0];
+        var content = $.trim($(".feedback-input-wrap textarea").val());
+        if (!_this.flag) {
+            _this.flag = true;
+            $.post('/index.php?app=aboutus&ac=feedback', {content: content}, function (res) {
 
-				if (res.status == 1) {
-					showDialogTip({tip: "反馈成功"}, function() {
-						allowPageScroll();
-						$(".feedback-wrap").addClass("dn");
-						$(".feedback-input-wrap textarea").val("");
-						_this.flag = false;
-					});
-				} else {
-					showDialogTip({tip:'反馈内容不能为空', error: true});
-					_this.flag = false;
-				}
-			},'json')
-		}
+                if (res.status == -1) {
+                    $(".feedback-wrap").addClass("dn");
+                    loginIframe.show();
+                    return;
+                }
 
-	});
+                if (res.status == 1) {
+                    showDialogTip({tip: "反馈成功"}, function () {
+                        allowPageScroll();
+                        $(".feedback-wrap").addClass("dn");
+                        $(".feedback-input-wrap textarea").val("");
+                        _this.flag = false;
+                    });
+                } else {
+                    showDialogTip({tip: '反馈内容不能为空', error: true});
+                    _this.flag = false;
+                }
+            }, 'json')
+        }
 
-	$("#feedback_close_btn_div").click(function(){
-		allowPageScroll();
-		$(".feedback_post_bg").fadeOut(200);
-		$("#feedback_post_textarea_div textarea").val('');
-	});
+    });
 
-	$(".slide-bar .to-up").on("click",function(){
-		$("html,body").animate({scrollTop:0},800);
-	});
+    $("#feedback_close_btn_div").click(function () {
+        allowPageScroll();
+        $(".feedback_post_bg").fadeOut(200);
+        $("#feedback_post_textarea_div textarea").val('');
+    });
 
-	checkPosition($(window).height());
-	$(window).on("scroll",function(){
-		checkPosition($(window).height());
-	});
+    $(".slide-bar .to-up").on("click", function () {
+        $("html,body").animate({scrollTop: 0}, 800);
+    });
 
-	function checkPosition(pos){
-		if($(window).scrollTop() > pos){
-			if (!$(".to-up").hasClass('show')) $(".to-up").addClass('show');
-		}else{
-			if ($(".to-up").hasClass('show')) $(".to-up").removeClass('show');
-		};
-	};
+    checkPosition($(window).height());
+    $(window).on("scroll", function () {
+        checkPosition($(window).height());
+    });
 
-	$('.qrcode-box').qrcode({
-	    render  : "canvas",
-	    width: 200,
-	    height: 200,
-	    text  : location.href
-	});
+    function checkPosition(pos) {
+        if ($(window).scrollTop() > pos) {
+            if (!$(".to-up").hasClass('show')) $(".to-up").addClass('show');
+        } else {
+            if ($(".to-up").hasClass('show')) $(".to-up").removeClass('show');
+        }
+        ;
+    };
 
-	$('.to-wap').hover(function () {
-		$('#qrcode').removeClass("dn");
-	},function(){
-		$('#qrcode').addClass("dn");
-	})
+    $('.qrcode-box').qrcode({
+        render: "canvas",
+        width: 200,
+        height: 200,
+        text: location.href
+    });
+
+    $('.to-wap').hover(function () {
+        $('#qrcode').removeClass("dn");
+    }, function () {
+        $('#qrcode').addClass("dn");
+    })
 
 
 </script>
@@ -898,118 +1087,121 @@ sa.quick('autoTrack');
 </div> -->
 <script>var siteUrl = "https://www.xinpianchang.com/";</script>
 <script type="text/javascript">
-	var share_title = "";
-	var share_desc = "";
-	var share_img = "";
+    var share_title = "";
+    var share_desc = "";
+    var share_img = "";
 
 </script>
 <script src="https://www.xinpianchang.com/public/js/jquery.cookie.js?v=1540194470"></script>
 <script>
-	$('.first').hover(function() {
-		$(this).parent().children().first().css({borderBottom: '7px solid #454545'});
-	},function(){
-		$(this).parent().children().first().css({borderBottom: '7px solid #323232'});
-	});
+    $('.first').hover(function () {
+        $(this).parent().children().first().css({borderBottom: '7px solid #454545'});
+    }, function () {
+        $(this).parent().children().first().css({borderBottom: '7px solid #323232'});
+    });
 
 </script>
 <script>
-	var hideCode;
-	$('.follow-wx').hover(function(){
-		$(this).parent().parent().siblings('.wx-qr').css('display','block');
-		$(this).next(".follow-wx-tri").css('display','block');
-	},function(){
-		$(this).parent().parent().siblings('.wx-qr').css('display','none');
-		$(this).next(".follow-wx-tri").css('display','none');
-	});
-	$('.followus').hover(function(){
-		$(this).siblings('.wx-qr-follow').css('display','block');
-	},function(){
-		hideCode=setTimeout(function(){
-			$(".wx-qr-follow").hide();
-		},300);
-		$(this).siblings('.wx-qr-follow').css('display','none');
-	});
+    var hideCode;
+    $('.follow-wx').hover(function () {
+        $(this).parent().parent().siblings('.wx-qr').css('display', 'block');
+        $(this).next(".follow-wx-tri").css('display', 'block');
+    }, function () {
+        $(this).parent().parent().siblings('.wx-qr').css('display', 'none');
+        $(this).next(".follow-wx-tri").css('display', 'none');
+    });
+    $('.followus').hover(function () {
+        $(this).siblings('.wx-qr-follow').css('display', 'block');
+    }, function () {
+        hideCode = setTimeout(function () {
+            $(".wx-qr-follow").hide();
+        }, 300);
+        $(this).siblings('.wx-qr-follow').css('display', 'none');
+    });
 
 
 </script>
 <script>
-var userid=10345093;
-if (userid) {
-	$('.needLogin').removeClass('needLogin');
-};
-//evdata(userid);
-$("#feedBack .feedback_icon").click(function(){
-	$(".feedback_post_bg").fadeIn(200);
-	$("#feedback_post_textarea_div textarea").focus(function(){
-		$(this).val('');
-	})
-	$("#feedback_action_btn_div").bind('click',function(){
-		var content = $.trim($("#feedback_post_textarea_div textarea").val());
-		if(content && content!='请提供你宝贵的建议，让我们做得更好！'){
-			$.post(siteUrl+'index.php?app=aboutus&ac=feedback',{content:content},function(re){
-				if(re.status){
-					$("#feedback_post_textarea_div").hide();
-					$("#feedback_post_succeed_div").show();
-					$("#feedback_action_btn_div").hide();
-				}
-			},'json')
-			setTimeout(function(){
-				$(".feedback_post_bg").hide();
-				$("#feedback_post_textarea_div").show();
-				$("#feedback_post_succeed_div").hide();
-				$("#feedback_action_btn_div").show();
-				$("#feedback_post_textarea_div textarea").val('');
-			},3000)
-		}else{
+    var userid = 10345093;
+    if (userid) {
+        $('.needLogin').removeClass('needLogin');
+    }
+    ;
+    //evdata(userid);
+    $("#feedBack .feedback_icon").click(function () {
+        $(".feedback_post_bg").fadeIn(200);
+        $("#feedback_post_textarea_div textarea").focus(function () {
+            $(this).val('');
+        })
+        $("#feedback_action_btn_div").bind('click', function () {
+            var content = $.trim($("#feedback_post_textarea_div textarea").val());
+            if (content && content != '请提供你宝贵的建议，让我们做得更好！') {
+                $.post(siteUrl + 'index.php?app=aboutus&ac=feedback', {content: content}, function (re) {
+                    if (re.status) {
+                        $("#feedback_post_textarea_div").hide();
+                        $("#feedback_post_succeed_div").show();
+                        $("#feedback_action_btn_div").hide();
+                    }
+                }, 'json')
+                setTimeout(function () {
+                    $(".feedback_post_bg").hide();
+                    $("#feedback_post_textarea_div").show();
+                    $("#feedback_post_succeed_div").hide();
+                    $("#feedback_action_btn_div").show();
+                    $("#feedback_post_textarea_div textarea").val('');
+                }, 3000)
+            } else {
 
-		}
-	})
-})
-$("#feedback_close_btn_div").click(function(){$(".feedback_post_bg").fadeOut(200);})
-$(".login_close_footer").click(function(){
-	$(".login-guide").remove();
-	var date = new Date();
-    date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000)); //三天后的这个时候过期
-    $.cookie('login-guide',1, { path: '/', expires: date });
-})
-$(function(){
-	var pre_href = $('#v-notice-num').attr('href');
+            }
+        })
+    })
+    $("#feedback_close_btn_div").click(function () {
+        $(".feedback_post_bg").fadeOut(200);
+    })
+    $(".login_close_footer").click(function () {
+        $(".login-guide").remove();
+        var date = new Date();
+        date.setTime(date.getTime() + (7 * 24 * 60 * 60 * 1000)); //三天后的这个时候过期
+        $.cookie('login-guide', 1, {path: '/', expires: date});
+    })
+    $(function () {
+        var pre_href = $('#v-notice-num').attr('href');
 
-	// getVmovierNotice();
-	// setInterval(function(){
-	// 	getVmovierNotice();
-	// },200000);
-	// function getVmovierNotice () {
-	// 	var href = $('#v-notice-num').attr('href');
-	// 	$.ajax({
-	// 		type:'get',url:'https://www.vmovier.com/'+'notice/getUnreadNum',
-	// 		dataType:'jsonp',jsonp:'vjsonp',jsonpCallback:'callback',success:function(res){
-	// 			if( res.num != 0 ){
-	// 				$('#v-notice-num').text(res.num).removeClass('dn');
-	// 				$('#v-notice-num').attr('href',pre_href+res.href)
-	// 			}else{
-	// 				$('#v-notice-num').text(res.num).addClass('dn');
-	// 			}
-	// 		}
-	// 	});
-	// }
-});
+        // getVmovierNotice();
+        // setInterval(function(){
+        // 	getVmovierNotice();
+        // },200000);
+        // function getVmovierNotice () {
+        // 	var href = $('#v-notice-num').attr('href');
+        // 	$.ajax({
+        // 		type:'get',url:'https://www.vmovier.com/'+'notice/getUnreadNum',
+        // 		dataType:'jsonp',jsonp:'vjsonp',jsonpCallback:'callback',success:function(res){
+        // 			if( res.num != 0 ){
+        // 				$('#v-notice-num').text(res.num).removeClass('dn');
+        // 				$('#v-notice-num').attr('href',pre_href+res.href)
+        // 			}else{
+        // 				$('#v-notice-num').text(res.num).addClass('dn');
+        // 			}
+        // 		}
+        // 	});
+        // }
+    });
 
 
 </script>
 <script type="text/javascript">
-function sns_conform(title,content,next_func){
-	var conformDoText=arguments[3]?arguments[3]:'确定';
-	$("#snsModalLabel").text(title);
-	$("#snsModalContent").text(content);
-	$("#conformDo").text(conformDoText);
-	$('#snsModal').modal('show');
-	$('#conformDo').bind('click',function(){
-		$('#snsModal').modal('hide');
-		next_func();
-	});
+    function sns_conform(title, content, next_func) {
+        var conformDoText = arguments[3] ? arguments[3] : '确定';
+        $("#snsModalLabel").text(title);
+        $("#snsModalContent").text(content);
+        $("#conformDo").text(conformDoText);
+        $('#snsModal').modal('show');
+        $('#conformDo').bind('click', function () {
+            $('#snsModal').modal('hide');
+            next_func();
+        });
 
-}
+    }
 
 </script>
 <!-- <script src="https://www.xinpianchang.com/public/js/common.js?v=1540194470" type="text/javascript"></script> -->
@@ -1018,42 +1210,41 @@ function sns_conform(title,content,next_func){
 <script src="http://letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
 <![endif]-->
 <script type="text/javascript">
-$(document).ready(function(){
-	/*
-	$('#wx2wm').hover(function(){
-         $(".erweima").show();
-	},function(){
-         $(".erweima").hide();
-	});
-	*/
-	$("#xma_search").bind("click",function(){
-		var conVal = $('#search').val();
-		if(conVal == ''){
-			var pace = 600;
-			$('#search').css('backgroundColor','#D9EDF7').animate({opacity:0.2},pace).animate({opacity:1},pace,function(){
-				$('#search').css('backgroundColor','#fff');
-			});
-			return;
-		}
-		else
-			$('#search_btn').click();
-	});
-	/* 绑定search input框的回车按下按钮。 */
-	$("#search").bind("keyup",function(event){
-		if( event.keyCode == 13 ){
-			var conVal = $.trim($('#search').val());
-			if(conVal == ''){
-				var pace = 600;
-				$('#search').css('backgroundColor','#D9EDF7').animate({opacity:0.2},pace).animate({opacity:1},pace,function(){
-					$('#search').css('backgroundColor','#fff');
-				});
-				return false;
-			}else{
-				$('#search_btn').click();
-			}
-		}
-	});
-});
+    $(document).ready(function () {
+        /*
+        $('#wx2wm').hover(function(){
+             $(".erweima").show();
+        },function(){
+             $(".erweima").hide();
+        });
+        */
+        $("#xma_search").bind("click", function () {
+            var conVal = $('#search').val();
+            if (conVal == '') {
+                var pace = 600;
+                $('#search').css('backgroundColor', '#D9EDF7').animate({opacity: 0.2}, pace).animate({opacity: 1}, pace, function () {
+                    $('#search').css('backgroundColor', '#fff');
+                });
+                return;
+            } else
+                $('#search_btn').click();
+        });
+        /* 绑定search input框的回车按下按钮。 */
+        $("#search").bind("keyup", function (event) {
+            if (event.keyCode == 13) {
+                var conVal = $.trim($('#search').val());
+                if (conVal == '') {
+                    var pace = 600;
+                    $('#search').css('backgroundColor', '#D9EDF7').animate({opacity: 0.2}, pace).animate({opacity: 1}, pace, function () {
+                        $('#search').css('backgroundColor', '#fff');
+                    });
+                    return false;
+                } else {
+                    $('#search_btn').click();
+                }
+            }
+        });
+    });
 
 
 </script>
@@ -1061,18 +1252,17 @@ $(document).ready(function(){
 <script src="https://www.xinpianchang.com/public/js/baidu_persona.js?v=1540194470"></script>
 <!-- 百度自动推送 -->
 <script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
 
 </script>
 
